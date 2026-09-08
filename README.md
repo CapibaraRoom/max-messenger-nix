@@ -4,9 +4,39 @@
 
 # Использование
 
+Flake inputs:
 ```
-здесь команда
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    max-messenger = {
+      url = "github:CapibaraRoom/max-messenger-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+}
 ```
+
+Nix-конигурация:
+```
+{ pkgs, inputs, ... }:
+
+{
+  environment.systemPackages = [
+    inputs.max-messenger.packages.${pkgs.system}.default
+  ];
+
+  # Required for session persistence
+  services.gnome.gnome-keyring.enable = true;
+}
+```
+
+Применение (важно перезагрузиться):
+```
+sudo nixos-rebuild switch
+sudo reboot
+```
+
 
 # Исходные данные
 
