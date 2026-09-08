@@ -12,7 +12,7 @@
 
 Информация взята с сайта: [clsv.ru](https://clsv.ru/linux/zapuskaem_messendzher_max_v_firejail_(sandbox)_120)
 
-За основу взят deb-пакет. Получение метаданных: [download](https://download.max.ru/linux/deb/dists/stable/main/binary-amd64/Packages.gz)
+За основу взят deb-пакет. Получение метаданных: [download .gz](https://download.max.ru/linux/deb/dists/stable/main/binary-amd64/Packages.gz)
 
 Получение deb-пакета:
 ```
